@@ -1,0 +1,42 @@
+server:
+    name: test-server
+    listen: :8080
+    max_upload: 104857600
+namespace:
+    auto_approve: true
+    reserved:
+        - admin
+        - system
+storage:
+    type: local
+    path: /var/folders/qd/d610q8214w1bhphfst9gb8340000gn/T/dehub-test-589870406
+    endpoint: ""
+    bucket: ""
+    access_key: ""
+    secret_key: ""
+users:
+    admin:
+        token: admin-token
+    developer:
+        token: dev-token
+namespaces:
+    private-ns:
+        owners:
+            - admin
+        maintainers: []
+        visibility: private
+        status: active
+    public-ns:
+        owners:
+            - admin
+        maintainers:
+            - developer
+        visibility: public
+        status: active
+    test-new-ns:
+        owners:
+            - admin
+        maintainers: []
+        visibility: public
+        status: active
+upstreams: []
